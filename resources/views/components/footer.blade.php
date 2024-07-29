@@ -4,7 +4,7 @@
         <div class="row">
             <!-- Footer Widget -->
             <div class="footer-widget col-lg-3 col-md-6 col-12 mb-50">
-                <a class="footer-logo" href="index.html"><img src="img/logo/footer.png" alt="Image">
+                <a class="footer-logo" href="index.html"><img src="{{ asset('img/logo/footer.png') }}" alt="Image">
                 </a>
                 @if ($meta)
                 <p>

@@ -13,5 +13,6 @@ class Jurusan extends Model
         'title',
         'sub_title',
         'slug',
+        'description'
     ];
 }

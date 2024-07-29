@@ -1,18 +1,18 @@
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
 <!-- Icon Font CSS -->
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/material-design-iconic-font.min.css') }}">
 
 <!-- Plugins CSS -->
-<link rel="stylesheet" href="css/plugins.css">
+<link rel="stylesheet" href="{{ asset('css/plugins.css') }}">
 
 <!-- Style CSS -->
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="{{ asset('style.css') }}">
 
 <!-- Responsive CSS -->
-<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
 <!-- Modernizr JS -->
-<script src="js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="{{ asset('js/vendor/modernizr-3.11.2.min.js') }}"></script>

@@ -6,10 +6,12 @@ Route::get('/', \App\Livewire\Home\Index::class)->name('index');
 
 Route::name('course.')->prefix('course')->group(function () {
   Route::get('/', \App\Livewire\Course\Index::class)->name('index');
+  Route::get('/detail/{slug}', \App\Livewire\Course\Detail::class)->name('detail');
 });
 
 Route::name('event.')->prefix('event')->group(function () {
   Route::get('/', \App\Livewire\Event\Index::class)->name('index');
+  Route::get('/detail/{slug}', \App\Livewire\Event\Detail::class)->name('detail');
 });
 
 Route::name('gallery.')->prefix('gallery')->group(function () {

@@ -1,12 +1,7 @@
 @props(['news' => []])
 <div class="news-area bg-white section pt-120 pb-120">
     <div class="container">
-        <!-- Section Title -->
-        <div class="row">
-            <div class="section-title col-xs-12 mb-80">
-                <h3>Berita Terkini </h3>
-            </div>
-        </div>
+        {{ $slot }}
         <div class="row mb--30">
             @foreach ($news as $item )
             <!-- News Item -->
@@ -22,7 +17,7 @@
                         <p class="truncate ">
                             {{ Str::limit($item->description, 100, '...') }}
                         </p>
-                        <a href="news-details.html">LEARN Now</a>
+                        <a href="news-details.html">Lihat Detail</a>
                     </div>
                 </div>
             </div>

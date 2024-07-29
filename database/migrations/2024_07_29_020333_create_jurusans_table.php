@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('sub_title')->nullable()->default(null);
+            $table->longText('description');
             $table->timestamps();
         });
     }

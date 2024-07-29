@@ -1,3 +1,17 @@
 <div>
-    {{-- To attain knowledge, add things every day; To attain wisdom, subtract things every day. --}}
+    <!-- Page Banner Area Start -->
+    <div class="page-banner-area overlay section">
+        <div class="container">
+            <div class="row">
+                <!-- Page Banner -->
+                <div class="page-banner text-center col-xs-12">
+                    <h1>Berita Terkini</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Page Banner Area -->
+    @if ($news)
+    <x-section.news :news="$news" />
+    @endif
 </div>

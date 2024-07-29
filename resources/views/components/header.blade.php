@@ -1,11 +1,25 @@
 <header class="header-area section ">
+    <div class="header-top section">
+        <div class="container">
+            <div class="row">
+                <!-- Header Top Left -->
+                <div class="header-top-left text-start col-7">
+                </div>
+                <!-- Header Top Right -->
+                <div class="header-top-right text-end col-5">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="header-bottom bg-white sticker section sticker">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
                     <!-- Header Logo -->
                     <div class="header-logo float-start">
-                        <a href="{{ route('index') }}"><img src="img/logo/logo.png" alt="logo"></a>
+                        <a href="{{ route('index') }}"><img src="{{ asset('img/logo/logo.png') }}" alt="logo"></a>
                     </div>
                     <!-- Main Menu -->
                     <div class="main-menu float-end hidden-xs">
