@@ -7,9 +7,11 @@
             <!-- News Item -->
             <div class="col-lg-4 col-md-6 col-12 mb-30">
                 <div class="news-item">
-                    <a href="news-details.html" class="image"><img src="{{ asset($item->thumbnail) }}" alt="Image"></a>
+                    <a href="{{ route('news.detail' , ['slug' => $item->slug]) }}" class="image"><img
+                            src="{{ asset($item->thumbnail) }}" alt="Image"></a>
                     <div class="content">
-                        <h3><a href="news-details.html">{{ Str::ucfirst($item->title) }}</a></h3>
+                        <h3><a href="{{ route('news.detail' , ['slug' => $item->slug]) }}">{{ Str::ucfirst($item->title)
+                                }}</a></h3>
                         <div class="news-meta fix">
                             <span><i class="zmdi zmdi-calendar-check"></i>{{ $item->created_at->format('d M Y')
                                 }}</span>
@@ -17,7 +19,7 @@
                         <p class="truncate ">
                             {{ Str::limit($item->description, 100, '...') }}
                         </p>
-                        <a href="news-details.html">Lihat Detail</a>
+                        <a href="{{ route('news.detail' , ['slug' => $item->slug]) }}">Lihat Detail</a>
                     </div>
                 </div>
             </div>

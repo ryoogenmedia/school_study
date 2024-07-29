@@ -20,6 +20,7 @@ Route::name('gallery.')->prefix('gallery')->group(function () {
 
 Route::name('news.')->prefix('news')->group(function () {
   Route::get('/', \App\Livewire\News\Index::class)->name('index');
+  Route::get('/detail/{slug}', \App\Livewire\News\Detail::class)->name('detail');
 });
 
 Route::name('contact.')->prefix('contact')->group(function () {

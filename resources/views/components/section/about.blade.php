@@ -12,7 +12,7 @@
                 <p>
                     {{ $description }}
                 </p>
-                <a class="btn" href="about.html">Learn Now</a>
+                {{-- <a class="btn" href="about.html">Learn Now</a> --}}
             </div>
         </div>
     </div>
