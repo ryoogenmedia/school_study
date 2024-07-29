@@ -1,22 +1,4 @@
 <header class="header-area section ">
-    <!-- Header Top -->
-    <div class="header-top section">
-        <div class="container">
-            <div class="row">
-                <!-- Header Top Left -->
-                <div class="header-top-left text-start col-7">
-                    <p>Have any question? +968 547856 254</p>
-                </div>
-                <!-- Header Top Right -->
-                <div class="header-top-right text-end col-5">
-                    <ul>
-                        <li><a href="#">Kontak Kami</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Header Bottom -->
     <div class="header-bottom bg-white sticker section sticker">
         <div class="container">
             <div class="row">

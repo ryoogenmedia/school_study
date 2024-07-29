@@ -8,6 +8,10 @@ Route::name('course.')->prefix('course')->group(function () {
   Route::get('/', \App\Livewire\Course\Index::class)->name('index');
 });
 
+Route::name('event.')->prefix('event')->group(function () {
+  Route::get('/', \App\Livewire\Event\Index::class)->name('index');
+});
+
 Route::name('gallery.')->prefix('gallery')->group(function () {
   Route::get('/', \App\Livewire\Gallery\Index::class)->name('index');
 });

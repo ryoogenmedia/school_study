@@ -6,8 +6,12 @@ return [
     'url' => 'index'
   ],
   [
-    'title' => 'Mata Pelajaran',
+    'title' => 'Jurusan',
     'url' => 'course.index'
+  ],
+  [
+    'title' => 'Event',
+    'url' => 'event.index'
   ],
   [
     'title' => 'Galeri',

@@ -5,19 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Meta extends Model
+class Jurusan extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'favicon',
-        'logo',
+        'thumbnail',
         'title',
-        'description',
-        'phone',
-        'email',
-        'address',
-        'about',
-        'total_teacher',
-        'total_student'
+        'sub_title',
+        'slug',
     ];
 }

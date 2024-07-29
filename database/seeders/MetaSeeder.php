@@ -21,6 +21,8 @@ class MetaSeeder extends Seeder
             'email' => fake()->safeEmail(),
             'address' => fake()->address(),
             'about' => fake()->paragraphs(5, true),
+            'total_teacher' => fake()->randomFloat(0, 1, 1000),
+            'total_student' => fake()->randomFloat(0, 1, 1000),
         ]);
     }
 }

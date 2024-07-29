@@ -21,6 +21,8 @@ return new class extends Migration
             $table->longText('email')->nullable()->default(null);
             $table->longText('address')->nullable()->default(null);
             $table->longText('about')->nullable()->default(null);
+            $table->string('total_teacher')->nullable()->default(0);
+            $table->string('total_student')->nullable()->default(0);
             $table->timestamps();
         });
     }
