@@ -4,6 +4,7 @@ namespace App\Livewire\Home;
 
 use App\Models\Meta;
 use App\Models\Slider;
+use App\Models\Gallery;
 use App\Models\Jurusan;
 use Livewire\Component;
 
@@ -14,6 +15,7 @@ class Index extends Component
     public $meta;
 
     public $jurusans;
+    public $galleries;
 
     public function boot()
     {
@@ -23,6 +25,8 @@ class Index extends Component
             $this->meta = $metas->first();
         }
         $this->jurusans = Jurusan::all();
+
+        $this->galleries = Gallery::latest()->get();
     }
     public function render()
     {

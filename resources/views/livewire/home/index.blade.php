@@ -1,6 +1,8 @@
 <div>
     <!-- Slider Area Start -->
+    @if ($sliders)
     <x-section.slider :datas="$sliders" />
+    @endif
     <!-- End of Slider Area -->
 
     <!-- About Area Start -->
@@ -10,7 +12,9 @@
     <!-- End of About Area -->
 
     <!-- Course Area Start -->
+    @if ($jurusans)
     <x-section.jurusan :jurusans="$jurusans" />
+    @endif
     <!-- End of Course Area -->
 
     <!-- Funfact Area Start -->
@@ -20,7 +24,9 @@
     <!-- End of Funfact Area -->
 
     <!-- Gallery Area Start -->
-    <x-section.gallery />
+    @if ($galleries)
+    <x-section.gallery :datas="$galleries" />
+    @endif
     <!-- End of Gallery Area -->
 
     <!-- Event Area Start -->
