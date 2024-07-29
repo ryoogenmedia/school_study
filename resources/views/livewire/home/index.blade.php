@@ -30,15 +30,21 @@
     <!-- End of Gallery Area -->
 
     <!-- Event Area Start -->
-    <x-section.event />
+    @if ($events)
+    <x-section.event :events="$events" />
+    @endif
     <!-- End of Event Area -->
 
     <!-- Testimonial Area Start -->
-    <x-section.testimoni />
+    @if ($testimonis)
+    <x-section.testimoni :testimonis="$testimonis" />
+    @endif
     <!-- End of Testimonial Area -->
 
     <!-- News Area Start -->
-    <x-section.news />
+    @if ($news)
+    <x-section.news :news="$news" />
+    @endif
     <!-- End of Latest News Area -->
 
 </div>

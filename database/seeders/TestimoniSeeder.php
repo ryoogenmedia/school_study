@@ -12,6 +12,10 @@ class TestimoniSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        \App\Models\Testimoni::create([
+            'testimoni' => fake()->paragraphs(6, true),
+            'isShow' => true,
+            'name' => fake()->name(),
+        ]);
     }
 }

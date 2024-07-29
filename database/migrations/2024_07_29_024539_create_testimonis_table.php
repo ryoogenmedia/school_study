@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('testimonis', function (Blueprint $table) {
             $table->id();
+            $table->longText('testimoni');
+            $table->boolean('isShow')->default(true);
+            $table->string('name');
             $table->timestamps();
         });
     }

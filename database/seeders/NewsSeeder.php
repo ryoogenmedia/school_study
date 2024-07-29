@@ -12,6 +12,11 @@ class NewsSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        \App\Models\News::create([
+            'slug' => fake()->words(3, true),
+            'thumbnail' => 'img/news/1.jpg',
+            'title' => fake()->words(5, true),
+            'description' => fake()->paragraphs(15, true),
+        ]);
     }
 }
