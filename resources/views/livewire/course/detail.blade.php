@@ -21,16 +21,15 @@
                 <div class="col-xl-9 col-lg-8 col-12 mb-20">
                     <!-- Single Course Details -->
                     <div class="single-course-details">
-                        <div class="image mb-4"><img alt="Image" src="{{ asset($jurusan->thumbnail) }}"></div>
+                        <div class="image mb-4"><img alt="Image" src="{{ asset(Storage::url($jurusan->thumbnail)) }}">
+                        </div>
                         <div class="content">
                             <h4 class="title">{{ Str::ucfirst($jurusan->title) }}</h4>
                             <div class="course-info">
                                 <span>{{ $jurusan->sub_title }}</span>
                             </div>
                             <div class="course-text-content">
-                                <p>
-                                    {{ $jurusan->description }}
-                                </p>
+                                <x-p :text="$jurusan->description" />
                             </div>
                         </div>
                     </div>
@@ -46,7 +45,7 @@
                             @foreach ($jurusans as $item )
                             <div class="recent-event-item">
                                 <a class="image" href="{{ route('course.detail' , ['slug' => $item->slug]) }}"><img
-                                        src="{{ asset($item->thumbnail) }}" alt="Image"></a>
+                                        src="{{ asset(Storage::url($item->thumbnail)) }}" alt="Image"></a>
                                 <div class="content">
                                     <h5><a href="{{ route('course.detail' , ['slug' => $item->slug]) }}">
                                             {{ Str::ucfirst($item->title) }}

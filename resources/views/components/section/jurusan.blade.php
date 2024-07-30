@@ -10,7 +10,7 @@
             <div class="col-lg-4 col-md-6 col-sm-12 mb-30">
                 <div class="course-item">
                     <a class="image" href="{{ route('course.detail' ,['slug' => $jurusan->slug]) }}"><img
-                            src="{{ asset($jurusan->thumbnail) }}" alt="Image"></a>
+                            src="{{ asset(Storage::url($jurusan->thumbnail)) }}" alt="Image"></a>
                     <div class="content">
                         <h4 class="title"><a href="{{ route('course.detail' ,['slug' => $jurusan->slug]) }}">{{
                                 $jurusan->title }}</a></h4>
