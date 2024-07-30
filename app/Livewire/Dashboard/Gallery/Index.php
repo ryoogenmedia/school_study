@@ -44,4 +44,10 @@ class Index extends Component
             //throw $th;
         }
     }
+
+    public function delete($id)
+    {
+        Gallery::findOrFail($id)->delete();
+        $this->boot();
+    }
 }

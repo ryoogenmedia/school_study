@@ -19,7 +19,7 @@
                 <div class="col-xl-9 col-lg-8 col-12 mb-20">
                     <!-- Single News Details -->
                     <div class="single-news-details">
-                        <img class="mb-4" src="{{ asset($new->thumbnail) }}" alt="Image">
+                        <img class="mb-4" src="{{ asset(Storage::url($new->thumbnail)) }}" alt="Image">
                         <div class="content">
                             <h3 class="title">{{ Str::ucfirst($new->title) }}</h3>
                             <div class="news-meta fix">
@@ -42,7 +42,7 @@
                             @foreach ($news->take(5) as $item )
                             <div class="recent-news-item">
                                 <a class="image" href="{{ route('news.detail' , ['slug' => $item->slug]) }}"><img
-                                        src="{{ asset($item->thumbnail) }}" alt="Image"></a>
+                                        src="{{ asset(Storage::url($item->thumbnail)) }}" alt="Image"></a>
                                 <div class="content">
                                     <h5><a href="{{ route('news.detail' , ['slug' => $item->slug]) }}">
                                             {{ Str::ucfirst($item->title) }}
@@ -50,6 +50,7 @@
                                     <p>{{ Str::limit($item->description, 70, '...') }}</p>
                                 </div>
                             </div>
+                            <br />
                             @endforeach
                         </div>
                     </div>

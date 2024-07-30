@@ -51,6 +51,7 @@ Route::middleware('auth')->group(function () {
       Route::get('/gallery', \App\Livewire\Dashboard\Gallery\Index::class)->name('gallery.index');
       Route::get('/news', \App\Livewire\Dashboard\News\Index::class)->name('news.index');
       Route::get('/message', \App\Livewire\Dashboard\Message\Index::class)->name('message.index');
+      Route::get('/admin', \App\Livewire\Dashboard\Admin\Index::class)->name('admin.index');
     });
   });
 });

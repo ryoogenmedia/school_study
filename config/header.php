@@ -17,10 +17,10 @@ return [
     'title' => 'Galeri',
     'url' => 'gallery.index'
   ],
-  // [
-  //   'title' => 'Berita',
-  //   'url' => 'news.index'
-  // ],
+  [
+    'title' => 'Berita',
+    'url' => 'news.index'
+  ],
   [
     'title' => 'Kontak',
     'url' => 'contact.index'

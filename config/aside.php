@@ -27,14 +27,19 @@ return [
     'icon' => 'bi-images',
     'url' => 'dashboard.gallery.index'
   ],
-  // [
-  //   'title' => 'Berita',
-  //   'icon' => 'bi-newspaper',
-  //   'url' => 'dashboard.news.index'
-  // ],
+  [
+    'title' => 'Berita',
+    'icon' => 'bi-newspaper',
+    'url' => 'dashboard.news.index'
+  ],
   [
     'title' => 'Pesan',
     'icon' => 'bi-messenger',
     'url' => 'dashboard.message.index'
+  ],
+  [
+    'title' => 'Admin',
+    'icon' => 'bi-person-circle',
+    'url' => 'dashboard.admin.index'
   ],
 ];

@@ -10,40 +10,30 @@
                         class="js-datatable table table-borderless table-thead-bordered table-nowrap table-align-middle card-table">
                         <thead class="thead-light">
                             <tr>
-                                <th>Thumbnail</th>
-                                <th>Title</th>
-                                <th>Description</th>
+                                <th>Name</th>
+                                <th>Email</th>
                                 <th>Create At</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
 
                         <tbody>
-                            @foreach ($news as $new )
+                            @foreach ($users as $user )
                             <tr>
                                 <td>
-                                    <a href="{{ route('news.detail' , ['slug' => $new->slug]) }}" target="_blank"
-                                        class="d-flex align-items-center">
-                                        <div class="avatar avatar-circle">
-                                            <img class="avatar-img" src="{{ asset(Storage::url($new->thumbnail)) }}"
-                                                alt="Image Description">
-                                        </div>
-                                    </a>
+                                    <span class="d-block  text-inherit mb-0">{{ $user->name }}</span>
                                 </td>
                                 <td>
-                                    <span class="d-block  text-inherit mb-0">{{ $new->title }}</span>
+                                    <span class="d-block  text-inherit mb-0">{{ $user->email }}</span>
                                 </td>
                                 <td>
-                                    <span class="d-block  text-inherit mb-0">{{ $new->created_at->format('d M y , h:i
+                                    <span class="d-block  text-inherit mb-0">{{ $user->created_at->format('d M y , h:i
                                         a') }}</span>
-                                </td>
-                                <td>
-                                    <x-p :text="Str::limit($new->description , 50 , '...')" />
                                 </td>
                                 <td>
                                     <div class="gap-2">
                                         <button class="btn btn-sm btn-primary">Edit</button>
-                                        <button class="btn btn-sm btn-danger" wire:click='delete({{ $new->id }})'
+                                        <button class="btn btn-sm btn-danger" wire:click='delete({{ $user->id }})'
                                             wire:loading.attr='disabled'>Delete</button>
                                     </div>
                                 </td>
@@ -63,29 +53,16 @@
             </div>
             <div class="card-body">
                 <form wire:submit='create()'>
+                    @foreach ($form as $key => $value )
                     <div class="mb-3">
-                        <label class="form-label" for="inputtitle">Title</label>
-                        <input type="text" id="inputtitle" class="form-control" placeholder="Title"
-                            wire:model='form.title'>
-                        @error('form.title')
+                        <label class="form-label" for="input{{ $key }}">{{ Str::ucfirst($key) }}</label>
+                        <input type="text" id="input{{ $key }}" class="form-control" placeholder="{{ $key}}"
+                            wire:model.lazy='form.{{ $key }}'>
+                        @error('form.'.$key)
                         <code>{{ $message }}</code>
                         @enderror
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="inputThumbail">Image</label>
-                        <input type="file" class="form-control" accept="image/*" wire:model='image'>
-                        @error('image')
-                        <code>{{ $message }}</code>
-                        @enderror
-                    </div>
-
-                    <div class="mb-3">
-                        <textarea type="text" class="form-control" wire:model='form.description'
-                            placeholder="Deskripsi " rows="10"></textarea>
-                        @error('form.description')
-                        <code>{{ $message }}</code>
-                        @enderror
-                    </div>
+                    @endforeach
                     <div class="d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary" wire:loading.attr='disabled'>
                             Create

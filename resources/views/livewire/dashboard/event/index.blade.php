@@ -2,7 +2,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header  ">
-                <h2>List Slider</h2>
+                <h2>List Event</h2>
             </div>
             <div class="card-body">
                 <div class="table-responsive datatable-custom">
