@@ -14,8 +14,7 @@
                 <div class="footer-social">
                     @if ($socialMedias)
                     @foreach ($socialMedias as $social )
-                    <a target="_blank" rel="noopener" href="https://{{ $social->url }}"><i
-                            class="{{ $social->icon }}"></i></a>
+                    <a target="_blank" rel="noopener" href="{{ $social->url }}"><i class="{{ $social->icon }}"></i></a>
                     @endforeach
                     @endif
                 </div>

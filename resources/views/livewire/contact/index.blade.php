@@ -33,7 +33,7 @@
                     <div class="contact-social fix">
                         @if ($socialMedias)
                         @foreach ($socialMedias as $social )
-                        <a target="_blank" rel="noopener" href="https://{{ $social->url }}"><i
+                        <a target="_blank" rel="noopener" href="{{ $social->url }}"><i
                                 class="{{ $social->icon }}"></i></a>
                         @endforeach
                         @endif

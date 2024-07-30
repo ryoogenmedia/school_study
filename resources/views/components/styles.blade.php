@@ -1,5 +1,6 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/css/vendor.min.css') }}">
 
 <!-- Icon Font CSS -->
 <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">

@@ -27,7 +27,7 @@
 
     <!-- Funfact Area Start -->
     @if ($meta)
-    <x-section.fun-act :teacher="$meta->total_teacher" :student="$meta->total_teacher" :course="$jurusans->count()" />
+    <x-section.fun-act :teacher="$meta->total_teacher" :student="$meta->total_student" :course="$jurusans->count()" />
     @endif
     <!-- End of Funfact Area -->
 
