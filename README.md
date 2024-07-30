@@ -1,4 +1,4 @@
-Jalankan Ini Dulu Sodara , Blum sya bkinkan Fitur Create Admin dan Global Variabel nya
+First Instalasi
 
 ```
 php artisan db:seed --class=DatabaseSeeder
