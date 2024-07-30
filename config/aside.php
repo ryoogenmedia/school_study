@@ -27,11 +27,11 @@ return [
     'icon' => 'bi-images',
     'url' => 'dashboard.gallery.index'
   ],
-  [
-    'title' => 'Berita',
-    'icon' => 'bi-newspaper',
-    'url' => 'dashboard.news.index'
-  ],
+  // [
+  //   'title' => 'Berita',
+  //   'icon' => 'bi-newspaper',
+  //   'url' => 'dashboard.news.index'
+  // ],
   [
     'title' => 'Pesan',
     'icon' => 'bi-messenger',

@@ -57,14 +57,15 @@
     @endif
     <!-- End of Event Area -->
 
+    {{--
     <!-- Testimonial Area Start -->
     @if ($testimonis)
     <x-section.testimoni :testimonis="$testimonis" />
     @endif
-    <!-- End of Testimonial Area -->
+    <!-- End of Testimonial Area --> --}}
 
     <!-- News Area Start -->
-    @if ($news)
+    {{-- @if ($news)
     <x-section.news :news="$news->take(3)">
         <!-- Section Title -->
         <div class="row">
@@ -73,7 +74,7 @@
             </div>
         </div>
     </x-section.news>
-    @endif
+    @endif --}}
     <!-- End of Latest News Area -->
 
 </div>
