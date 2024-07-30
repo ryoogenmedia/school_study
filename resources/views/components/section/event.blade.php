@@ -7,7 +7,7 @@
             <!-- Event Item -->
             <div class="col-lg-4 col-md-6 col-12 mb-30">
                 <div class="event-item">
-                    <img src="{{ asset($event->thumbnail) }}" alt="Image">
+                    <img src="{{ asset(Storage::url($event->thumbnail)) }}" alt="Image">
                     <span class="date">{{ \Illuminate\Support\Carbon::parse($event->schedule)->format('d') }}
                         <span>{{ \Illuminate\Support\Carbon::parse($event->schedule)->format('M') }}</span></span>
                     <div class="content">

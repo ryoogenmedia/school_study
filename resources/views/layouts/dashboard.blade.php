@@ -37,6 +37,8 @@
       opacity: 0;
     }
   </style>
+
+  @stack('styles')
   <x-scripts.auth />
 </head>
 
@@ -98,6 +100,7 @@
     })()
   </script>
 
+  @stack('scripts')
   <!-- Style Switcher JS -->
 </body>
 

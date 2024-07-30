@@ -26,7 +26,6 @@ class Index extends Component
             'label' => 'Social Media',
             'target' => 'socialMedia'
         ],
-
     ];
 
     public MetaForm $form;

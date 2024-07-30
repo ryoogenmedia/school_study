@@ -1,4 +1,5 @@
 <div class="row">
+
     <div class="col-12">
         <div class="card">
             <div class="card-header  ">
@@ -10,56 +11,38 @@
                         class="js-datatable table table-borderless table-thead-bordered table-nowrap table-align-middle card-table">
                         <thead class="thead-light">
                             <tr>
-                                <th>Thumbnail</th>
+                                <th>Image</th>
                                 <th>Title</th>
-                                <th>Schedule</th>
-                                <th>Start</th>
-                                <th>End</th>
-                                <th>Location</th>
+                                <th>Sub Title</th>
                                 <th>Description</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
 
                         <tbody>
-                            @foreach ($events as $event )
+                            @foreach ($sliders as $slider )
                             <tr>
                                 <td>
                                     <div class="d-flex align-items-center">
                                         <div class="avatar avatar-circle">
-                                            <img class="avatar-img" src="{{ asset(Storage::url($event->thumbnail)) }}"
+                                            <img class="avatar-img" src="{{ asset(Storage::url($slider->image)) }}"
                                                 alt="Image Description">
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <span class="d-block  text-inherit mb-0">{{ $event->title }}</span>
+                                    <span class="d-block h5 text-inherit mb-0">{{ $slider->title }}</span>
                                 </td>
                                 <td>
-                                    <span class="d-block  text-inherit mb-0">
-                                        {{\Illuminate\Support\Carbon::parse($event->schedule)->format('d M y') }}
-                                    </span>
+                                    <span class="d-block h5 text-inherit mb-0">{{ $slider->sub_title }}</span>
                                 </td>
                                 <td>
-                                    <span class="d-block  text-inherit mb-0">
-                                        {{\Illuminate\Support\Carbon::parse($event->start)->format('h:i a') }}
-                                    </span>
-                                </td>
-                                <td>
-                                    <span class="d-block  text-inherit mb-0">
-                                        {{\Illuminate\Support\Carbon::parse($event->end)->format('h:i a') }}
-                                    </span>
-                                </td>
-                                <td>
-                                    <span class="d-block  text-inherit mb-0">{{ $event->location }}</span>
-                                </td>
-                                <td>
-                                    <x-p :text="Str::limit($event->description , 50 , '...')" />
+                                    <x-p :text="Str::limit($slider->description , 50 , '...')" />
                                 </td>
                                 <td>
                                     <div class="gap-2">
                                         <button class="btn btn-sm btn-primary">Edit</button>
-                                        <button class="btn btn-sm btn-danger" wire:click='delete({{ $event->id }})'
+                                        <button class="btn btn-sm btn-danger" wire:click='delete({{ $slider->id }})'
                                             wire:loading.attr='disabled'>Delete</button>
                                     </div>
                                 </td>
@@ -71,7 +54,6 @@
             </div>
         </div>
     </div>
-
     <div class="col-12 mt-5">
         <div class="card">
             <div class="card-header">
@@ -79,9 +61,7 @@
             </div>
             <div class="card-body">
                 <form wire:submit='create()'>
-                    @foreach ($form->except(['thumbnail' , 'description' , 'schedule' , 'start' , 'end','slug']) as $key
-                    =>
-                    $value )
+                    @foreach ($form->except(['image' , 'description']) as $key => $value )
                     <div class="mb-3">
                         <label class="form-label" for="input{{ $key }}">{{ Str::ucfirst($key == 'sub_title' ? 'Sub
                             Title' : $key) }}</label>
@@ -94,31 +74,8 @@
                     </div>
                     @endforeach
                     <div class="mb-3">
-                        <label class="form-label" for="inputThumbail">Schedule</label>
-                        <input type="date" class="form-control" wire:model='form.schedule'>
-                        @error('form.schedule')
-                        <code>{{ $message }}</code>
-                        @enderror
-                    </div>
-                    <div class="mb-3 row">
-                        <div class="col-6">
-                            <label class="form-label" for="inputThumbail">Start</label>
-                            <input type="time" class="form-control" wire:model='form.start'>
-                            @error('form.start')
-                            <code>{{ $message }}</code>
-                            @enderror
-                        </div>
-                        <div class="col-6">
-                            <label class="form-label" for="inputThumbail">End</label>
-                            <input type="time" class="form-control" wire:model='form.end'>
-                            @error('form.end')
-                            <code>{{ $message }}</code>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="mb-3">
                         <label class="form-label" for="inputThumbail">Image</label>
-                        <input type="file" class="form-control" accept="image/*" wire:model='image'>
+                        <input type="file" id="inputThumbail" class="form-control" accept="image/*" wire:model='image'>
                         @error('image')
                         <code>{{ $message }}</code>
                         @enderror

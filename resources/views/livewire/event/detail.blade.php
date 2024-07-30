@@ -20,7 +20,7 @@
                 <div class="col-12 mb-20">
                     <!-- Single Event Details -->
                     <div class="single-event-details">
-                        <img src="{{ asset($event->thumbnail) }}" alt="Image">
+                        <img src="{{ asset(Storage::url($event->thumbnail)) }}" alt="Image">
                         <span class="date">{{ \Illuminate\Support\Carbon::parse($event->schedule)->format('d') }}
                             <span>{{ \Illuminate\Support\Carbon::parse($event->schedule)->format('M') }}</span></span>
                         <div class="content">

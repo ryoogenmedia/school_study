@@ -41,8 +41,12 @@ Route::middleware('auth')->group(function () {
 
     Route::name('dashboard.')->group(function () {
       Route::get('/', \App\Livewire\Dashboard\Index::class)->name('index');
+
+      Route::get('/slider', \App\Livewire\Dashboard\Slider\Index::class)->name('slider.index');
+
       Route::get('/jurusan', \App\Livewire\Dashboard\Jurusan\Index::class)->name('jurusan.index');
       Route::get('/jurusan/create', \App\Livewire\Dashboard\Jurusan\Create::class)->name('jurusan.create');
+
       Route::get('/event', \App\Livewire\Dashboard\Event\Index::class)->name('event.index');
       Route::get('/gallery', \App\Livewire\Dashboard\Gallery\Index::class)->name('gallery.index');
       Route::get('/news', \App\Livewire\Dashboard\News\Index::class)->name('news.index');

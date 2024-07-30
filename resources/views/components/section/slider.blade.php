@@ -3,7 +3,7 @@
 <div class="slider-area section">
     <div id="hero-slider" class="slides">
         @foreach ($datas as $data )
-        <img src="{{ $data->image }}" alt="Image" title="#slider-caption{{ $data->id }}" />
+        <img src="{{ asset(Storage::url($data->image)) }}" alt="Image" title="#slider-caption{{ $data->id }}" />
         @endforeach
     </div>
     @foreach ($datas as $data )

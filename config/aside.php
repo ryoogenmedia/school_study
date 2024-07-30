@@ -2,9 +2,14 @@
 
 return [
   [
-    'title' => 'Basic Info',
+    'title' => 'Global Variabel',
     'icon' => 'bi-globe',
     'url' => 'dashboard.index'
+  ],
+  [
+    'title' => 'Home Slider',
+    'icon' => 'bi-images',
+    'url' => 'dashboard.slider.index'
   ],
   [
     'title' => 'Jurusan',
@@ -16,6 +21,7 @@ return [
     'icon' => 'bi-calendar2-event',
     'url' => 'dashboard.event.index'
   ],
+
   [
     'title' => 'Galeri',
     'icon' => 'bi-images',
