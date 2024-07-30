@@ -9,10 +9,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>Welcome Page | Front - Admin &amp; Dashboard Template</title>
+  <title> Study - Academic Website </title>
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
 
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
