@@ -37,4 +37,19 @@ class NewsForm extends Form
             return sweetalert()->error('Internal Server Error');
         }
     }
+
+    public function edit($id)
+    {
+        $this->validate();
+        try {
+            if (News::findOrFail($id)->update($this->all())) {
+                $this->reset();
+                return sweetalert()->success('Updated');
+            } else {
+                return sweetalert()->error('Updated Failed');
+            }
+        } catch (\Exception $err) {
+            return sweetalert()->error('Internal Server Error');
+        }
+    }
 }

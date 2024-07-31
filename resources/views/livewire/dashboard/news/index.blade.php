@@ -34,15 +34,17 @@
                                     <span class="d-block  text-inherit mb-0">{{ $new->title }}</span>
                                 </td>
                                 <td>
-                                    <span class="d-block  text-inherit mb-0">{{ $new->created_at->format('d M y , h:i
-                                        a') }}</span>
-                                </td>
-                                <td>
                                     <x-p :text="Str::limit($new->description , 50 , '...')" />
                                 </td>
                                 <td>
+                                    <span class="d-block  text-inherit mb-0">{{ $new->created_at->format('d M y , h:i
+                                        a') }}</span>
+                                </td>
+
+                                <td>
                                     <div class="gap-2">
-                                        <button class="btn btn-sm btn-primary">Edit</button>
+                                        <button class="btn btn-sm btn-primary"
+                                            wire:click='editToggle({{ $new->id }})'>Edit</button>
                                         <button class="btn btn-sm btn-danger" wire:click='delete({{ $new->id }})'
                                             wire:loading.attr='disabled'>Delete</button>
                                     </div>
@@ -59,10 +61,10 @@
     <div class="col-12 mt-5">
         <div class="card">
             <div class="card-header">
-                <h2>Create </h2>
+                <h2>{{ $isEdit ? 'Edit' : 'Create' }} </h2>
             </div>
             <div class="card-body">
-                <form wire:submit='create()'>
+                <form @if ($isEdit) wire:submit='edit()' @else wire:submit='create()' @endif>
                     <div class="mb-3">
                         <label class="form-label" for="inputtitle">Title</label>
                         <input type="text" id="inputtitle" class="form-control" placeholder="Title"
@@ -88,7 +90,7 @@
                     </div>
                     <div class="d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary" wire:loading.attr='disabled'>
-                            Create
+                            {{ $isEdit ? 'Edit' : 'Create' }}
                         </button>
                     </div>
                 </form>
