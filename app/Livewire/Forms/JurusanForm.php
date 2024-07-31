@@ -17,24 +17,41 @@ class JurusanForm extends Form
     public $slug;
     public $description;
 
-    public function rules()
+
+
+    public function create()
     {
-        return [
+        $this->validate([
             'title' => 'required',
             'slug' => 'required|unique:jurusans,slug',
             'sub_title' => 'required',
             'thumbnail' => 'required',
             'description' => 'required|string'
-        ];
-    }
-
-    public function create()
-    {
-        $this->validate();
+        ]);
         try {
             if (Jurusan::create($this->all())) {
-                $this->reset() ;
+                $this->reset();
                 return sweetalert()->success('created');
+            }
+            return sweetalert()->error('Failed');
+        } catch (\Throwable $th) {
+            return sweetalert()->error('Internal Server Error');
+        }
+    }
+
+    public function edit($id)
+    {
+        $this->validate([
+            'title' => 'required',
+            'slug' => 'required',
+            'sub_title' => 'required',
+            'thumbnail' => 'required',
+            'description' => 'required|string'
+        ]);
+        try {
+            if (Jurusan::findOrFail($id)->update($this->all())) {
+                $this->reset();
+                return sweetalert()->success('Update');
             }
             return sweetalert()->error('Failed');
         } catch (\Throwable $th) {
