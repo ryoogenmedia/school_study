@@ -58,7 +58,8 @@
                                 </td>
                                 <td>
                                     <div class="gap-2">
-                                        <button class="btn btn-sm btn-primary">Edit</button>
+                                        <button class="btn btn-sm btn-primary"
+                                            wire:click='editToggle({{ $event->id }})'>Edit</button>
                                         <button class="btn btn-sm btn-danger" wire:click='delete({{ $event->id }})'
                                             wire:loading.attr='disabled'>Delete</button>
                                     </div>
@@ -75,10 +76,10 @@
     <div class="col-12 mt-5">
         <div class="card">
             <div class="card-header">
-                <h2>Create </h2>
+                <h2>{{ $isEdit ? 'Edit' : 'Create' }} </h2>
             </div>
             <div class="card-body">
-                <form wire:submit='create()'>
+                <form @if ($isEdit) wire:submit='edit()' @else wire:submit='create()' @endif>
                     @foreach ($form->except(['thumbnail' , 'description' , 'schedule' , 'start' , 'end','slug']) as $key
                     =>
                     $value )
@@ -133,7 +134,7 @@
                     </div>
                     <div class="d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary" wire:loading.attr='disabled'>
-                            Create
+                            {{ $isEdit ? 'Edit' : 'Create' }}
                         </button>
                     </div>
                 </form>

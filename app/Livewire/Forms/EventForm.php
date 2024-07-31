@@ -42,4 +42,30 @@ class EventForm extends Form
             //throw $th;
         }
     }
+
+    public function edit($id)
+    {
+        $this->validate([
+            'thumbnail' => 'required',
+            'schedule' => 'required',
+            'title' => 'required',
+            'location' => 'required',
+            'description' => 'required',
+            'start' => 'required',
+            'end' => 'required',
+            'slug' => 'required',
+        ]);
+
+        try {
+            if (Event::findOrFail($id)->update($this->all())) {
+                $this->reset();
+                return sweetalert()->success('Updated');
+            } else {
+                return sweetalert()->error('Updated Failed');
+            }
+        } catch (\Exception $err) {
+            return sweetalert()->error('Internal Server Error');
+            //throw $th;
+        }
+    }
 }
