@@ -23,15 +23,17 @@
                             <tr>
                                 <td>
                                     <div class="d-flex align-items-center">
-                                        <div class="avatar avatar-circle">
-                                            <img class="avatar-img" src="{{ asset(Storage::url($jurusan->thumbnail)) }}"
-                                                alt="Image Description">
-                                        </div>
+                                        <a href="{{ asset(Storage::url($jurusan->thumbnail)) }}" target="_blank">
+                                            <img class="avatar-img border border-primary"
+                                                src="{{ asset(Storage::url($jurusan->thumbnail)) }}"
+                                                alt="Image Description" width="150px" height="100px">
+                                        </a>
                                     </div>
                                 </td>
                                 <td>
                                     <a href="{{ route('course.detail' , ['slug' => $jurusan->slug]) }}" target="_blank">
-                                        <span class="d-block h5 text-inherit mb-0">{{ $jurusan->title }}</span>
+                                        <span class="d-block h5 text-primary mb-0  ">{{ $jurusan->title
+                                            }}</span>
                                         <span class="d-block fs-5 text-body">{{ $jurusan->sub_title }}</span>
                                     </a>
                                 <td>

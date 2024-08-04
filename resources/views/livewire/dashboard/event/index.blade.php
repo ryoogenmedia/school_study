@@ -26,10 +26,11 @@
                             <tr>
                                 <td>
                                     <div class="d-flex align-items-center">
-                                        <div class="avatar avatar-circle">
-                                            <img class="avatar-img" src="{{ asset(Storage::url($event->thumbnail)) }}"
-                                                alt="Image Description">
-                                        </div>
+                                        <a href="{{ asset(Storage::url($event->thumbnail)) }}" target="_blank">
+                                            <img class="avatar-img border border-primary"
+                                                src="{{ asset(Storage::url($event->thumbnail)) }}"
+                                                alt="Image Description" width="200px" height="100px">
+                                        </a>
                                     </div>
                                 </td>
                                 <td>

@@ -6,7 +6,7 @@
                 <h2>List Slider</h2>
             </div>
             <div class="card-body">
-                <div class="table-responsive datatable-custom">
+                <div class="table-responsive ">
                     <table
                         class="js-datatable table table-borderless table-thead-bordered table-nowrap table-align-middle card-table">
                         <thead class="thead-light">
@@ -24,10 +24,11 @@
                             <tr>
                                 <td>
                                     <div class="d-flex align-items-center">
-                                        <div class="avatar avatar-circle">
-                                            <img class="avatar-img" src="{{ asset(Storage::url($slider->image)) }}"
-                                                alt="Image Description">
-                                        </div>
+                                        <a class="nav-link nav-profile d-flex align-items-center pe-0"
+                                            href="{{ asset(Storage::url($slider->image)) }}" target="_blank">
+                                            <img src="{{ asset(Storage::url($slider->image)) }}" alt="Profile"
+                                                width="100px" height="100px" class="rounded border border-primary ">
+                                        </a>
                                     </div>
                                 </td>
                                 <td>

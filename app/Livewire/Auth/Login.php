@@ -11,15 +11,9 @@ class Login extends Component
 {
     public LoginForm $form;
 
-    public $showPassword  = false;
     public function render()
     {
         return view('livewire.auth.login');
-    }
-
-    public function toggle()
-    {
-        $this->showPassword = !$this->showPassword;
     }
 
     public function login()

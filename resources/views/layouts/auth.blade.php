@@ -2,109 +2,112 @@
 <html lang="en">
 
 <head>
-  <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <!-- Title -->
-  <title>Login Admin</title>
+  <title>Admin - Login</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
+  <!-- Favicons -->
+  <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
+  <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   @livewireStyles
-  <!-- CSS Implementing Plugins -->
-  <link rel="stylesheet" href="{{ asset('assets/css/vendor.min.css') }}">
 
-  <!-- CSS Front Template -->
-  <link rel="stylesheet" href="{{ asset('assets/css/theme.minc619.css?v=1.0') }}">
+  <!-- Vendor CSS Files -->
+  <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
 
-  <link rel="preload" href="{{ asset('assets/css/theme.min.css') }}" data-hs-appearance="default" as="style">
-  <link rel="preload" href="{{ asset('assets/css/theme-dark.min.css') }}" data-hs-appearance="dark" as="style">
+  <!-- Template Main CSS File -->
+  <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
-  <style data-hs-appearance-onload-styles>
-    * {
-      transition: unset !important;
-    }
-
-    body {
-      opacity: 0;
-    }
-  </style>
-
-  <x-scripts.auth />
-
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Updated: Apr 20 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
 <body>
 
-  <script src="{{ asset('assets/js/hs.theme-appearance.js') }}"></script>
+  <main>
+    <div class="container">
 
-  <!-- ========== MAIN CONTENT ========== -->
-  <main id="content" role="main" class="main">
-    <div class="position-fixed top-0 end-0 start-0 bg-img-start"
-      style="height: 32rem; background-image: url(assets/svg/components/card-6.svg);">
-      <!-- Shape -->
-      <div class="shape shape-bottom zi-1">
-        <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1921 273">
-          <polygon fill="#fff" points="0,273 1921,273 1921,0 " />
-        </svg>
-      </div>
-      <!-- End Shape -->
-    </div>
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
-    <!-- Content -->
-    <div class="container py-5 py-sm-7">
-      <a class="d-flex justify-content-center mb-5" href="index-2.html">
-        <img class="zi-2" src="{{ asset('assets/svg/logos/logo.svg') }}" alt="Image Description" style="width: 8rem;">
-      </a>
+              <div class="d-flex justify-content-center py-4">
+                <a href="index.html" class="logo d-flex align-items-center w-auto">
+                  <img src="assets/img/logo.png" alt="">
+                  <span class="d-none d-lg-block">NiceAdmin</span>
+                </a>
+              </div><!-- End Logo -->
 
-      <div class="mx-auto" style="max-width: 30rem;">
-        <!-- Card -->
-        <div class="card card-lg mb-5">
-          <div class="card-body">
-            <!-- Form -->
-            {{ $slot }}
-            <!-- End Form -->
+              <div class="card mb-3">
+
+                <div class="card-body">
+
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Login to Admin</h5>
+                    <p class="text-center small">Enter your email & password to login</p>
+                  </div>
+
+                  {{ $slot }}
+
+                </div>
+              </div>
+
+              <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              </div>
+
+            </div>
           </div>
         </div>
-        <!-- End Card -->
-      </div>
+
+      </section>
+
     </div>
-    <!-- End Content -->
-  </main>
-  <!-- ========== END MAIN CONTENT ========== -->
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   @livewireScripts
-  <!-- JS Implementing Plugins -->
-  <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
 
-  <!-- JS Front -->
-  <script src="{{ asset('assets/js/theme.min.js') }}"></script>
+  <!-- Vendor JS Files -->
+  <script src="{{ asset('assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/chart.js/chart.umd.js') }}"></script>
+  <script src="{{ asset('assets/vendor/echarts/echarts.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/quill/quill.js') }}"></script>
+  <script src="{{ asset('assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
+  <script src="{{ asset('assets/vendor/tinymce/tinymce.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
 
-  <!-- JS Plugins Init. -->
-  <script>
-    (function() {
-      window.onload = function () {
-        // INITIALIZATION OF BOOTSTRAP VALIDATION
-        // =======================================================
-        HSBsValidation.init('.js-validate', {
-          onSubmit: data => {
-            data.event.preventDefault()
-            alert('Submited')
-          }
-        })
+  <!-- Template Main JS File -->
+  <script src="{{ asset('assets/js/main.js') }}"></script>
 
-
-        // INITIALIZATION OF TOGGLE PASSWORD
-        // =======================================================
-        new HSTogglePassword('.js-toggle-password')
-      }
-    })()
-  </script>
 </body>
 
 </html>

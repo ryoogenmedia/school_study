@@ -1,72 +1,46 @@
-<header id="header"
-    class="navbar navbar-expand-lg navbar-fixed navbar-height navbar-container navbar-bordered bg-white">
-    <div class="navbar-nav-wrap">
-        <!-- Logo -->
-        <a class="navbar-brand" href="{{ route('dashboard.index') }}" aria-label="Front">
-            <img class="navbar-brand-logo" src="{{ asset('assets/svg/logos/logo.svg') }}" alt="Logo"
-                data-hs-theme-appearance="default">
-            <img class="navbar-brand-logo" src="{{ asset('assets/svg/logos-light/logo.svg') }}" alt="Logo"
-                data-hs-theme-appearance="dark">
-            <img class="navbar-brand-logo-mini" src="{{asset('assets/svg/logos/logo-short.svg')}}" alt="Logo"
-                data-hs-theme-appearance="default">
-            <img class="navbar-brand-logo-mini" src="{{ asset('assets/svg/logos-light/logo-short.svg') }}" alt="Logo"
-                data-hs-theme-appearance="dark">
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+        <a href="{{ route('dashboard.index') }}" class="logo d-flex align-items-center">
+            <img src="{{ asset('assets/img/logo.png') }}" alt="">
+            <span class="d-none d-lg-block">NiceAdmin</span>
         </a>
-        <!-- End Logo -->
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
 
-        <div class="navbar-nav-wrap-content-start">
-            <!-- Navbar Vertical Toggle -->
-            <button type="button" class="js-navbar-vertical-aside-toggle-invoker navbar-aside-toggler">
-                <i class="bi-arrow-bar-left navbar-toggler-short-align"
-                    data-bs-template='<div class="tooltip d-none d-md-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
-                    data-bs-toggle="tooltip" data-bs-placement="right" title="Collapse"></i>
-                <i class="bi-arrow-bar-right navbar-toggler-full-align"
-                    data-bs-template='<div class="tooltip d-none d-md-block" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
-                    data-bs-toggle="tooltip" data-bs-placement="right" title="Expand"></i>
-            </button>
 
-        </div>
+    <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
 
-        <div class="navbar-nav-wrap-content-end">
-            <!-- Navbar -->
-            <ul class="navbar-nav">
 
-                <li class="nav-item">
-                    <!-- Account -->
-                    <div class="dropdown">
-                        <a class="navbar-dropdown-account-wrapper" href="javascript:;" id="accountNavbarDropdown"
-                            data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside"
-                            data-bs-dropdown-animation>
-                            <div class="avatar avatar-sm avatar-circle">
-                                <img class="avatar-img" src="{{ asset('assets/img/160x160/img1.jpg') }}"
-                                    alt="Image Description">
-                            </div>
+
+            <li class="nav-item dropdown pe-3">
+
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                    <img src="{{ asset('assets/img/logo.png') }}" alt="Profile" class="rounded-circle p-1 bg-dark">
+                </a><!-- End Profile Iamge Icon -->
+
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                    <li class="dropdown-header">
+                        <h6>{{ auth()->user()->name }}</h6>
+                        <span>{{ auth()->user()->email }}</span>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span>Sign Out</span>
                         </a>
+                    </li>
 
-                        <div class="dropdown-menu dropdown-menu-end navbar-dropdown-menu navbar-dropdown-menu-borderless navbar-dropdown-account"
-                            aria-labelledby="accountNavbarDropdown" style="width: 16rem;">
-                            <div class="dropdown-item-text">
-                                <div class="d-flex align-items-center">
-                                    <div class="avatar avatar-sm avatar-circle">
-                                        <img class="avatar-img" src="{{ asset('assets/img/160x160/img1.jpg') }}"
-                                            alt="Image Description">
-                                    </div>
-                                    <div class="flex-grow-1 ms-3">
-                                        <h5 class="mb-0">{{ auth()->user()->name }}</h5>
-                                        <p class="card-text text-body">{{ auth()->user()->email }}</p>
-                                    </div>
-                                </div>
-                            </div>
+                </ul><!-- End Profile Dropdown Items -->
+            </li><!-- End Profile Nav -->
 
-                            <div class="dropdown-divider"></div>
+        </ul>
+    </nav><!-- End Icons Navigation -->
 
-                            <a class="dropdown-item" href="{{ route('logout') }}">Sign out</a>
-                        </div>
-                    </div>
-                    <!-- End Account -->
-                </li>
-            </ul>
-            <!-- End Navbar -->
-        </div>
-    </div>
-</header>
+</header><!-- End Header -->
